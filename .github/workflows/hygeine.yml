@@ -25,7 +25,7 @@ jobs:
         with:
           testMode: editMode
           artifactsPath: Hygeine-artifacts
-          githubToken: ${{ secrets.GITHUB_TOKEN }}
+          githubToken: ${{ secrets.TEST_RUN_TOKEN }}
           checkName: Hygeine Test Results
           coverageOptions: 'generateAdditionalMetrics;generateHtmlReport;generateBadgeReport;assemblyFilters:+my.assembly.*'
       - uses: actions/upload-artifact@v2
