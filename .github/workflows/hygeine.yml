@@ -1,4 +1,4 @@
-name: Hygeine Check
+name: Hygeine Check 
 
 on: workflow_dispatch
 
