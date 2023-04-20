@@ -6,7 +6,7 @@ using UnityEngine.TestTools;
 
 namespace Testing
 {
-    public class SimpleTests
+    public class Tests
     {
         [Test]
         public void SimplePass()
@@ -21,3 +21,4 @@ namespace Testing
         }
     }
 }
+
