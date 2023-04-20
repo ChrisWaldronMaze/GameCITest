@@ -4,7 +4,7 @@ on: workflow_dispatch
 
 jobs:
   testAllModes:
-    name: Test in ${{ matrix.testMode }}
+    name: Hygeine Check
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -24,17 +24,17 @@ jobs:
           UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
         with:
           testMode: editMode
-          artifactsPath: editMode-artifacts
+          artifactsPath: Hygeine-artifacts
           githubToken: ${{ secrets.GITHUB_TOKEN }}
           checkName: Hygeine Test Results
           coverageOptions: 'generateAdditionalMetrics;generateHtmlReport;generateBadgeReport;assemblyFilters:+my.assembly.*'
       - uses: actions/upload-artifact@v2
         if: always()
         with:
-          name: Test results for ${{ matrix.testMode }}
+          name: Test results for Hygeine
           path: ${{ steps.tests.outputs.artifactsPath }}
       - uses: actions/upload-artifact@v2
         if: always()
         with:
-          name: Coverage results for ${{ matrix.testMode }}
+          name: Coverage results for Hygeine
           path: ${{ steps.tests.outputs.coveragePath }}
